@@ -1,0 +1,6 @@
+<div *ngIf="isLoading" [ngStyle]="{'display': 'flex', 'justify-content': styleAlign}">
+  <div #sk
+       [ngClass]="{'circle-skeleton':shape==='circle'}" [ngStyle]="allStyles" class="loading-skeleton ">
+  </div>
+</div>
+<ng-content *ngIf="!isLoading"></ng-content>
