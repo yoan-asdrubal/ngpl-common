@@ -1,0 +1,53 @@
+.loading-skeleton {
+  animation-name: skeleton;
+  background: #d8d8d8;
+  width: 120px;
+  height: 10px;
+  position: relative;
+  -webkit-animation: infinite bgcolorchange 2s;
+  animation: 2s infinite bgcolorchange;
+  opacity: 0.5;
+}
+
+.circle-skeleton {
+  margin-left: -4px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+
+@keyframes bgcolorchange {
+  0% {
+    background: silver
+  }
+  50% {
+    background: dimgray
+  }
+  100% {
+    background: silver
+  }
+}
+
+@keyframes buttonDesactiveColorchange {
+  0% {
+    background: rgba(252, 122, 35, 0.9)
+  }
+  50% {
+    background: rgba(252, 122, 35, 0.6)
+  }
+  100% {
+    background: rgba(252, 122, 35, 0.9)
+  }
+}
+
+@keyframes buttonAtiveColorchange {
+  0% {
+    background: rgba(222, 193, 173, 0.9)
+  }
+  50% {
+    background: rgba(222, 193, 173, 0.6)
+  }
+  100% {
+    background: rgba(222, 193, 173, 0.9)
+  }
+}

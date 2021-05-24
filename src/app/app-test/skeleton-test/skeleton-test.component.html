@@ -1,0 +1,20 @@
+<section>
+<span class="title">
+      Skeletons
+    </span>
+
+  <div fxLayout="row" fxLayoutAlign="space-around center">
+    <ngpl-skeleton width="100px" height="25px" [isLoading]="loading" >
+      Texto d ejemplo
+    </ngpl-skeleton>
+    <ngpl-skeleton width="100px" height="25px" [isLoading]="loading" [borderRadius]="'50%'">
+      Informacion
+    </ngpl-skeleton>
+    <ngpl-skeleton width="25px" height="25px" shape="circle" [isLoading]="loading" class="mr-3 ml-3">
+      <mat-icon class="mat-18">more_vert</mat-icon>
+    </ngpl-skeleton>
+    <button (click)="loading = !loading"> Toogle Loading</button>
+  </div>
+
+
+</section>
