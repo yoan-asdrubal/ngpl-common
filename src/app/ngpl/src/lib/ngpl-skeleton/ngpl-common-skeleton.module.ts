@@ -9,5 +9,5 @@ import {CommonModule} from '@angular/common';
   ],
   exports: [NgplSkeletonComponent]
 })
-export class NgplSkeletonModule {
+export class NgplCommonSkeletonModule {
 }
