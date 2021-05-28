@@ -7,6 +7,8 @@ import {NgplGeneratePagesPipe} from './ngpl-generate-pages.pipe';
 import {TruncatePipe} from './truncate/truncate.pipe';
 import {NgplFillPipe} from './ngpl-fill.pipe';
 import {NgplHighlightPipe} from './highlight/ngpl-highlight.pipe';
+import '../ngpl-interfaces/string.interface';
+import '../ngpl-interfaces/object.interface';
 
 @NgModule({
   imports: [

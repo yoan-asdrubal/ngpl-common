@@ -1,7 +1,7 @@
 import {Directive, ViewContainerRef} from '@angular/core';
 
 @Directive({
-  selector: '[dfControlErrorContainer]'
+  selector: '[ngplControlErrorContainer]'
 })
 export class NgplControlErrorContainerDirective {
 

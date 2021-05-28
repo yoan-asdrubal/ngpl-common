@@ -1,3 +1,5 @@
+import './lib/ngpl-interfaces/string.interface';
+import './lib/ngpl-interfaces/object.interface';
 
 export * from './lib/ngpl-filter-base';
 

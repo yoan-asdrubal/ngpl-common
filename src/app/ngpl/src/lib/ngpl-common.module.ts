@@ -2,38 +2,30 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {NgplCommonSkeletonModule} from './ngpl-skeleton/ngpl-common-skeleton.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {
-  NgplControlErrorsDirective,
-  NgplDisableReactiveControlDirective,
-  NgplFormSubmitDirective,
-  NgplMinWidthDirective,
-  NgplWidthDirective
-} from './ngpl-directives';
-import {NgplFillPipe} from './ngpl-pipes';
+import {NgplCommonPipesModule} from './ngpl-pipes';
+import {NgplCommonDirectivesModule} from './ngpl-directives';
+import {NgplCommonFilterModule} from './ngpl-filter';
+import './ngpl-interfaces/string.interface';
+import './ngpl-interfaces/object.interface';
 // @ts-ignore
 
 const modules = [
-  NgplCommonSkeletonModule
-];
-const directives = [
-  NgplDisableReactiveControlDirective,
-  NgplMinWidthDirective,
-  NgplWidthDirective,
-  NgplFormSubmitDirective,
-  NgplControlErrorsDirective
+  NgplCommonSkeletonModule,
+  NgplCommonDirectivesModule,
+  NgplCommonPipesModule,
+  NgplCommonFilterModule
 ];
 
+
 @NgModule({
-  declarations: [directives],
+  declarations: [],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
     modules
   ],
-  exports: [modules, directives]
+  exports: [modules]
 })
 export class NgplCommonModule {
-  constructor() {
-    console.log({'new NgplFillPipe().transform([], 25)': new NgplFillPipe().transform([], 25)});
-  }
+
 }

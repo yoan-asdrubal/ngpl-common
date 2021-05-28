@@ -4,7 +4,7 @@ import {Directive, ElementRef, Input, OnInit, Optional} from '@angular/core';
   selector: '[ngplMinWidth]'
 })
 export class NgplMinWidthDirective implements OnInit {
-  @Input() dfMinWidth = '100%';
+  @Input() ngplMinWidth = '100%';
 
   constructor(@Optional() private host: ElementRef) {
 
@@ -13,7 +13,7 @@ export class NgplMinWidthDirective implements OnInit {
   ngOnInit(): void {
     const element = this.host.nativeElement as HTMLElement;
     if (!!element && !!element.style) {
-      element.style.minWidth = this.dfMinWidth;
+      element.style.minWidth = this.ngplMinWidth;
     }
   }
 }
