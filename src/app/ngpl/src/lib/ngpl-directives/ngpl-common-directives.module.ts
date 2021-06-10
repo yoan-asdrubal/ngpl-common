@@ -10,6 +10,7 @@ import {NgplControlErrorsDirective} from './ngpl-form-error/ngpl-control-errors.
 import {NgplControlErrorContainerDirective} from './ngpl-form-error/ngpl-control-error-container.directive';
 import '../ngpl-interfaces/string.interface';
 import '../ngpl-interfaces/object.interface';
+import {NgplPreventKeyboardDirective} from './ngpl-prevent-keyboard/ngpl-prevent-keyboard.directive';
 
 const directives = [
   NgplDisableReactiveControlDirective,
@@ -17,7 +18,8 @@ const directives = [
   NgplWidthDirective,
   NgplFormSubmitDirective,
   NgplControlErrorsDirective,
-  NgplControlErrorContainerDirective
+  NgplControlErrorContainerDirective,
+  NgplPreventKeyboardDirective
 ];
 
 @NgModule({

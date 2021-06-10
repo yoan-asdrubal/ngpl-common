@@ -6,4 +6,5 @@ export * from './ngpl-form-error/ngpl-form-submit.directive';
 export * from './ngpl-width.directive';
 export * from './ngpl-min-width.directive';
 export * from './ngpl-disable-reactive-control.directive';
+export * from './ngpl-prevent-keyboard/ngpl-prevent-keyboard.directive';
 export * from './ngpl-common-directives.module';

@@ -9,6 +9,8 @@ declare global {
     getRandomSentence(words: number): string;
 
     getRandomWords(sizes: number[]): string[];
+
+    base64ToObj(): string;
   }
 }
 
@@ -58,9 +60,20 @@ if (!String.prototype.getRandomWords) {
     return sizes.map(s => this.getRandomWord(s));
   };
 }
+if (!String.prototype.base64ToObj) {
+  String.prototype.base64ToObj = function (): any {
+
+    const objB64toObje = atob(this);
+
+    const obj = JSON.parse(objB64toObje);
+
+    return obj;
+  };
+}
 
 declare global {
   interface StringConstructor {
+
     getRandomWord(size: number): string;
 
     getRandomSentence(words: number): string;

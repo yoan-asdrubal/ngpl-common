@@ -11,6 +11,8 @@ declare global {
     setValueToProp(field, value): any;
 
     cleanEmptyProperties(config?: CleanEmptyPropertiesConfig): any;
+
+    toBase64(): string;
   }
 }
 if (!Object.getOrDefault) {
@@ -90,6 +92,22 @@ if (!Object.cleanEmptyProperties) {
         value = newArray;
       }
       return value;
+    }
+  });
+}
+if (!Object.toBase64) {
+  Object.defineProperty(Object.prototype, 'toBase64', {
+    value(): any {
+      if (!this) {
+        return null;
+      }
+      let objJsonStr = this;
+      if (typeof this !== 'string') {
+        objJsonStr = JSON.stringify(this);
+      }
+      const objJsonB64 = btoa(objJsonStr);
+
+      return objJsonB64;
     }
   });
 }

@@ -14,12 +14,11 @@ import {NgControl} from '@angular/forms';
 import {NGPL_FORM_ERRORS} from './ngpl-form-errors';
 import {NgplControlErrorContainerDirective} from './ngpl-control-error-container.directive';
 import {NgplFormSubmitDirective} from './ngpl-form-submit.directive';
-import {EMPTY, merge, Observable} from 'rxjs';
+import {EMPTY, merge, Observable, Subject} from 'rxjs';
 import {NgplControlErrorComponent} from './ngpl-control-error/ngpl-control-error.component';
-import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
 import {NgplDisableReactiveControlDirective} from '../ngpl-disable-reactive-control.directive';
+import {takeUntil} from 'rxjs/operators';
 
-@UntilDestroy()
 @Directive({
   // tslint:disable-next-line:directive-selector
   selector: '[formControl]:not([skipValidation]), [formControlName]:not([skipValidation])'
@@ -29,8 +28,11 @@ export class NgplControlErrorsDirective implements OnInit, OnDestroy {
   container: ViewContainerRef;
   submit$: Observable<Event>;
   state$: Observable<any>;
-  @Input() dfCustomErrors = {};
-  @Input() dfForce = false;
+  @Input() ngplCustomErrors = {};
+  @Input() ngplForce = false;
+
+  destroyIt = new Subject();
+  destroyIt$ = this.destroyIt.asObservable();
 
   constructor(
     private vcr: ViewContainerRef,
@@ -57,15 +59,15 @@ export class NgplControlErrorsDirective implements OnInit, OnDestroy {
         this.control.valueChanges,
         this.state$
       ).pipe(
-        untilDestroyed(this)
+        takeUntil(this.destroyIt$)
       ).subscribe((v) => {
         const controlErrors = this.control.errors;
         // console.log('ControlErrorsDirective', this.controlDir.name, controlErrors);
 
-        if (controlErrors && (this.dfForce || this.control.dirty) && this.control.enabled) {
+        if (controlErrors && (this.ngplForce || this.control.dirty) && this.control.enabled) {
           const firstKey = Object.keys(controlErrors)[0];
           const getError = this.errors[firstKey];
-          const text = this.dfCustomErrors[firstKey] || controlErrors[firstKey]?.message || (getError && getError(controlErrors[firstKey])) || 'Campo No Válido';
+          const text = this.ngplCustomErrors[firstKey] || controlErrors[firstKey]?.message || (getError && getError(controlErrors[firstKey])) || 'Campo No Válido';
           this.setError(text);
         } else if (this.ref) {
           this.setError(null);
@@ -83,7 +85,8 @@ export class NgplControlErrorsDirective implements OnInit, OnDestroy {
     this.ref.instance.text = text;
   }
 
-  ngOnDestroy(): void{
+  ngOnDestroy(): void {
+    this.destroyIt.next(true);
   }
 
 }
