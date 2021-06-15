@@ -1,12 +1,11 @@
 import {Directive, Inject, Input, OnDestroy, OnInit, Optional, Self} from '@angular/core';
-import {debounceTime, distinctUntilChanged, startWith, tap} from 'rxjs/operators';
+import {debounceTime, distinctUntilChanged, startWith, takeUntil, tap} from 'rxjs/operators';
 import {Observable, ReplaySubject, Subject} from 'rxjs';
 import {NgControl} from '@angular/forms';
-import {UntilDestroy} from '@ngneat/until-destroy';
-import {NGPL_FILTER_BASE, NgplFilterBase} from '../ngpl-filter-base';
-import {NgplDatatableBase} from '../ngpl-datatable-base';
-import {NgplFilterAppliedBase} from '../ngpl-filter-applied-base';
-import {NGPL_FILTER_MENU_BASE, NgplFilterMenuBase} from '../ngpl-filter-menu-base';
+import {NGPL_FILTER_BASE, NgplFilterBase} from '../ngpl-base/ngpl-filter-base';
+import {NgplDatatableBase} from '../ngpl-base/ngpl-datatable-base';
+import {NgplFilterAppliedBase} from '../ngpl-base/ngpl-filter-applied-base';
+import {NGPL_FILTER_MENU_BASE, NgplFilterMenuBase} from '../ngpl-base/ngpl-filter-menu-base';
 
 export enum FilterConfigType {
   PERIOD = 'PERIODO',
@@ -116,7 +115,6 @@ export interface NgplFilterConfigValue {
   filterFn?: (item: any, filterValue: any) => boolean;
 }
 
-@UntilDestroy()
 @Directive({
   selector: '[ngplFilterConfig]'
 })
@@ -166,6 +164,7 @@ export class NgplFilterConfigDirective implements OnInit, OnDestroy {
 
       event
         .pipe(
+          takeUntil(this.destroyIt$),
           startWith((!!this.controlDir && this.controlDir.control.value) || this.dfFilterConfig.value),
           distinctUntilChanged(),
           debounceTime(300),

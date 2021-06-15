@@ -1,11 +1,10 @@
+import './lib/ngpl-interfaces/string.interface';
+import './lib/ngpl-interfaces/object.interface';
+export * from './lib/ngpl-rxjs';
 
-export * from './lib/ngpl-filter-base';
+export * from './lib/ngpl-util';
 
-export * from './lib/ngpl-datatable-base';
-
-export * from './lib/ngpl-filter-menu-base';
-
-export * from './lib/ngpl-filter-applied-base';
+export * from './lib/ngpl-base';
 
 export * from './lib/ngpl-decorators';
 

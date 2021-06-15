@@ -28,6 +28,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {NgplSelectTestComponent} from './app-test/ngpl-select-test/ngpl-select-test.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgplCommonModule} from './ngpl/src/lib/ngpl-common.module';
+import {NgplDirectivesTestComponent} from './app-test/ngpl-directives-test/ngpl-directives-test.component';
 
 registerLocaleData(localeEs);
 
@@ -54,13 +55,14 @@ const materialModules = [
 const ngplCommonModules = [
   NgplCommonModule
 ];
- 
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SkeletonTestComponent,
     NgplSelectTestComponent,
+    NgplDirectivesTestComponent,
     SideNavComponent
   ],
   imports: [

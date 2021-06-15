@@ -54,7 +54,7 @@ export class NgplSkeletonComponent implements OnInit {
    * Alineacion del componente
    *
    */
-  @Input() align: 'center' | 'start' | 'end';
+  @Input() align: 'center' | 'start' | 'end' | 'space-around' | 'space-between';
 
   constructor() {
   }
@@ -63,10 +63,16 @@ export class NgplSkeletonComponent implements OnInit {
    * Devuelve la alineacion segun el atributo especificado
    */
   get styleAlign(): string {
-    if (this.align === 'center') {
-      return 'center';
-    } else {
-      return 'flex-' + this.align;
+    switch (this.align) {
+      case 'start': {
+        return 'flex-' + this.align;
+      }
+      case 'end' : {
+        return 'flex-' + this.align;
+      }
+      default : {
+        return this.align;
+      }
     }
   }
 
