@@ -16,7 +16,7 @@ import {NgplControlErrorContainerDirective} from './ngpl-control-error-container
 import {NgplFormSubmitDirective} from './ngpl-form-submit.directive';
 import {EMPTY, merge, Observable, Subject} from 'rxjs';
 import {NgplControlErrorComponent} from './ngpl-control-error/ngpl-control-error.component';
-import {NgplDisableReactiveControlDirective} from '../ngpl-disable-reactive-control.directive';
+import {NgplDisableReactiveControlDirective} from '../ngpl-disable-reactive-control/ngpl-disable-reactive-control.directive';
 import {takeUntil} from 'rxjs/operators';
 
 @Directive({
