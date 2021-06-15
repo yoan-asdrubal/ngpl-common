@@ -1,0 +1,785 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngpl-library documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ngpl-library documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>NgplSkeletonComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/ngpl/src/lib/ngpl-skeleton/ngpl-skeleton.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Muestra skeleton para representar un proceso de carga de datos</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+    <p class="comment">
+        <h3>Example</h3>
+    </p>
+    <div class="io-description">
+                <div>
+                    <pre class="line-numbers"><code class="language-html">&lt;df-skeleton width='75%' height='25px' &gt;{{'Informacion'}}&lt;/df-skeleton&gt;</code></pre>
+                </div>
+                <div>
+                    <pre class="line-numbers"><code class="language-html">&lt;df-skeleton width='25px' height='25px' shape='circle'&gt;&lt;mat-icon&gt; more_vert &lt;/mat-icon&gt;&lt;/df-skeleton&gt;</code></pre>
+                </div>
+    </div>
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>ngpl-skeleton</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./ngpl-skeleton.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./ngpl-skeleton.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#align">align</a>
+                            </li>
+                            <li>
+                                <a href="#borderRadius">borderRadius</a>
+                            </li>
+                            <li>
+                                <a href="#height">height</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading">isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#shape">shape</a>
+                            </li>
+                            <li>
+                                <a href="#width">width</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#styleAlign">styleAlign</a>
+                                </li>
+                                <li>
+                                    <a href="#allStyles">allStyles</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/ngpl/src/lib/ngpl-skeleton/ngpl-skeleton.component.ts:57</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="align"></a>
+                        <b>align</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;center&quot; | &quot;start&quot; | &quot;end&quot; | &quot;space-around&quot; | &quot;space-between&quot;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/ngpl/src/lib/ngpl-skeleton/ngpl-skeleton.component.ts:57</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Alineacion del componente</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="borderRadius"></a>
+                        <b>borderRadius</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/ngpl/src/lib/ngpl-skeleton/ngpl-skeleton.component.ts:51</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Define el border-radius del skeleton</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="height"></a>
+                        <b>height</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/ngpl/src/lib/ngpl-skeleton/ngpl-skeleton.component.ts:43</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Define el alto del skeleton</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isLoading"></a>
+                        <b>isLoading</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/ngpl/src/lib/ngpl-skeleton/ngpl-skeleton.component.ts:23</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Define si se muestra o no el skeleton</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="shape"></a>
+                        <b>shape</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>null | undefined | &quot;default&quot; | &quot;circle&quot;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/ngpl/src/lib/ngpl-skeleton/ngpl-skeleton.component.ts:28</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Define la forma del skeleton [&#39;default&#39;, &#39;circle&#39;]</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="width"></a>
+                        <b>width</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/ngpl/src/lib/ngpl-skeleton/ngpl-skeleton.component.ts:36</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Define el ancho del skeleton</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/app/ngpl/src/lib/ngpl-skeleton/ngpl-skeleton.component.ts:96</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="styleAlign"></a>
+                        <span class="name"><b>styleAlign</b><a href="#styleAlign"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>styleAlign()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/ngpl/src/lib/ngpl-skeleton/ngpl-skeleton.component.ts:65</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Devuelve la alineacion segun el atributo especificado</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="allStyles"></a>
+                        <span class="name"><b>allStyles</b><a href="#allStyles"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>allStyles()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/ngpl/src/lib/ngpl-skeleton/ngpl-skeleton.component.ts:82</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Define los estilso del skeleton en funcion de las propiedades definidas</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, Input, OnInit} from &#x27;@angular/core&#x27;;
+
+/**
+ * Muestra skeleton para representar un proceso de carga de datos
+ * @example
+ * &lt;df-skeleton width&#x3D;&#x27;75%&#x27; height&#x3D;&#x27;25px&#x27; &gt;
+ *  {{&#x27;Informacion&#x27;}}
+ * &lt;/df-skeleton&gt;
+ * @example
+ * &lt;df-skeleton width&#x3D;&#x27;25px&#x27; height&#x3D;&#x27;25px&#x27; shape&#x3D;&#x27;circle&#x27;&gt;
+ *   &lt;mat-icon&gt; more_vert &lt;/mat-icon&gt;
+ *  &lt;/df-skeleton&gt;
+ */
+@Component({
+  selector: &#x27;ngpl-skeleton&#x27;,
+  templateUrl: &#x27;./ngpl-skeleton.component.html&#x27;,
+  styleUrls: [&#x27;./ngpl-skeleton.component.css&#x27;]
+})
+export class NgplSkeletonComponent implements OnInit {
+  /**
+   * Define si se muestra o no el skeleton
+   */
+  @Input() isLoading: boolean;
+  /**
+   * Define la forma del skeleton [&#x27;default&#x27;, &#x27;circle&#x27;]
+   * @default default se muestra como barra
+   */
+  @Input() shape: null | undefined | &#x27;default&#x27; | &#x27;circle&#x27;;
+
+  /**
+   * Define el ancho del skeleton
+   * @example
+   * [width]&#x3D;&#x27;75%&#x27;
+   * [width]&#x3D;&#x27;75px&#x27;
+   */
+  @Input() width: string;
+
+  /**
+   * Define el alto del skeleton
+   * @example
+   * [height]&#x3D;&#x27;25px&#x27;
+   */
+  @Input() height: string;
+
+  /**
+   * Define el border-radius del skeleton
+   * @example
+   * [borderRadius]&#x3D;&#x27;5px&#x27;
+   * [borderRadius]&#x3D;&#x27;5%&#x27;
+   */
+  @Input() borderRadius: string;
+
+  /**
+   * Alineacion del componente
+   *
+   */
+  @Input() align: &#x27;center&#x27; | &#x27;start&#x27; | &#x27;end&#x27; | &#x27;space-around&#x27; | &#x27;space-between&#x27;;
+
+  constructor() {
+  }
+
+  /**
+   * Devuelve la alineacion segun el atributo especificado
+   */
+  get styleAlign(): string {
+    switch (this.align) {
+      case &#x27;start&#x27;: {
+        return &#x27;flex-&#x27; + this.align;
+      }
+      case &#x27;end&#x27; : {
+        return &#x27;flex-&#x27; + this.align;
+      }
+      default : {
+        return this.align;
+      }
+    }
+  }
+
+  /**
+   * Define los estilso del skeleton en funcion de las propiedades definidas
+   */
+  get allStyles(): any {
+    const style: any &#x3D; {};
+    if (this.width) {
+      style.width &#x3D; this.width;
+    }
+    if (this.height) {
+      style.height &#x3D; this.height;
+    }
+    if (this.borderRadius) {
+      style[&#x27;border-radius&#x27;] &#x3D; this.borderRadius;
+    }
+    return style;
+  }
+
+  ngOnInit(): void {
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;isLoading&quot; [ngStyle]&#x3D;&quot;{&#x27;display&#x27;: &#x27;flex&#x27;, &#x27;justify-content&#x27;: styleAlign}&quot;&gt;
+  &lt;div [ngClass]&#x3D;&quot;{&#x27;circle-skeleton&#x27;:shape&#x3D;&#x3D;&#x3D;&#x27;circle&#x27;}&quot; [ngStyle]&#x3D;&quot;allStyles&quot; class&#x3D;&quot;loading-skeleton &quot;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;ng-content *ngIf&#x3D;&quot;!isLoading&quot;&gt;&lt;/ng-content&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./ngpl-skeleton.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.loading-skeleton {
+  animation-name: skeleton;
+  background: #d8d8d8;
+  width: 120px;
+  height: 10px;
+  position: relative;
+  -webkit-animation: infinite bgcolorchange 2s;
+  animation: 2s infinite bgcolorchange;
+  opacity: 0.5;
+}
+
+.circle-skeleton {
+  margin-left: -4px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+
+@keyframes bgcolorchange {
+  0% {
+    background: silver
+  }
+  50% {
+    background: dimgray
+  }
+  100% {
+    background: silver
+  }
+}
+
+@keyframes buttonDesactiveColorchange {
+  0% {
+    background: rgba(252, 122, 35, 0.9)
+  }
+  50% {
+    background: rgba(252, 122, 35, 0.6)
+  }
+  100% {
+    background: rgba(252, 122, 35, 0.9)
+  }
+}
+
+@keyframes buttonAtiveColorchange {
+  0% {
+    background: rgba(222, 193, 173, 0.9)
+  }
+  50% {
+    background: rgba(222, 193, 173, 0.6)
+  }
+  100% {
+    background: rgba(222, 193, 173, 0.9)
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="isLoading" [ngStyle]="{\'display\': \'flex\', \'justify-content\': styleAlign}">  <div [ngClass]="{\'circle-skeleton\':shape===\'circle\'}" [ngStyle]="allStyles" class="loading-skeleton ">  </div></div><ng-content *ngIf="!isLoading"></ng-content></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'NgplControlErrorComponent', 'selector': ''},{'name': 'NgplDirectivesTestComponent', 'selector': 'app-skeleton-test'},{'name': 'NgplSelectTestComponent', 'selector': 'ngpl-ngpl-select-test'},{'name': 'NgplSkeletonComponent', 'selector': 'ngpl-skeleton'},{'name': 'SideNavComponent', 'selector': 'app-side-nav'},{'name': 'SkeletonTestComponent', 'selector': 'app-skeleton-test'}];
+    var DIRECTIVES = [{'name': 'NgplAutofocusDirective', 'selector': '[ngplAutoFocus]'},{'name': 'NgplControlErrorContainerDirective', 'selector': '[ngplControlErrorContainer]'},{'name': 'NgplControlErrorsDirective', 'selector': '[formControl]:not([skipValidation]), [formControlName]:not([skipValidation])'},{'name': 'NgplDecimalNumberDirective', 'selector': '[ngplDecimalNumber]'},{'name': 'NgplDisableReactiveControlDirective', 'selector': '[ngplDisableControl]'},{'name': 'NgplFilterConfigDirective', 'selector': '[ngplFilterConfig]'},{'name': 'NgplFormSubmitDirective', 'selector': 'form'},{'name': 'NgplIntegerNumberDirective', 'selector': '[ngplIntegerNumber]'},{'name': 'NgplMinWidthDirective', 'selector': '[ngplMinWidth]'},{'name': 'NgplNumberFormatDirective', 'selector': '[ngplNumberFormat]'},{'name': 'NgplPreventKeyboardDirective', 'selector': '[ngplPreventKeyboard]'},{'name': 'NgplWidthDirective', 'selector': '[ngplWidth]'}];
+    var ACTUAL_COMPONENT = {'name': 'NgplSkeletonComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NgplSkeletonComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

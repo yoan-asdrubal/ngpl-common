@@ -10,7 +10,8 @@
     "e2e": "ng e2e",
     "build:lib": "ng build ngpl --prod",
     "test:lib": "jest ",
-    "test:lib:coverage": "jest  --coverage  "
+    "test:lib:coverage": "jest  --coverage  ",
+    "compodoc": "npx compodoc -p tsconfig.doc.json   -d ./docs"
   },
   "private": true,
   "dependencies": {
