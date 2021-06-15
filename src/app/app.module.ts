@@ -13,7 +13,6 @@ import {registerLocaleData} from '@angular/common';
 import {OverlayContainer} from '@angular/cdk/overlay';
 import {CustomOverlayContainer} from './custom-overlay-container';
 import {MatIconModule} from '@angular/material/icon';
-import {NgplCommonModule} from './ngpl/src/lib/ngpl-common.module';
 import {SideNavComponent} from './side-nav/side-nav.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -24,9 +23,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import {SkeletonTestComponent} from "./app-test/skeleton-test/skeleton-test.component";
-import {FlexLayoutModule} from "@angular/flex-layout";
-import {NgplSkeletonModule} from "./ngpl/src/lib/ngpl-skeleton";
+import {SkeletonTestComponent} from './app-test/skeleton-test/skeleton-test.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {NgplSelectTestComponent} from './app-test/ngpl-select-test/ngpl-select-test.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgplCommonModule} from './ngpl/src/lib/ngpl-common.module';
 
 registerLocaleData(localeEs);
 
@@ -50,19 +51,28 @@ const materialModules = [
   MatCheckboxModule
 ];
 
+const ngplCommonModules = [
+  NgplCommonModule
+];
+ 
+
 @NgModule({
   declarations: [
     AppComponent,
     SkeletonTestComponent,
-    SideNavComponent,
+    NgplSelectTestComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
-    ...materialModules,
-    NgplSkeletonModule
+    materialModules,
+    NgplCommonModule
   ],
+  exports: [ngplCommonModules],
   providers: [{
     provide: LOCALE_ID, useValue: 'es-cl'
   },

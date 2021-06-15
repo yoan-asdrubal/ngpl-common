@@ -3,7 +3,7 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>NGPL-COMMON</mat-toolbar>
+    <mat-toolbar >NGPL-COMMON</mat-toolbar>
     <mat-divider></mat-divider>
     <mat-nav-list>
 <!--      <mat-list-item  >-->
@@ -11,6 +11,7 @@
 <!--        <div >Pipe</div>-->
 <!--      </mat-list-item>-->
       <a mat-list-item routerLink="/skeleton">Skeleton</a>
+      <a mat-list-item routerLink="/ngpl-select">Select</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

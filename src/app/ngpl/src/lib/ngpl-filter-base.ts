@@ -9,4 +9,5 @@ export interface NgplFilterBase {
 
 }
 
-export const WGPL_FILTER_BASE = new InjectionToken<NgplFilterBase>('NgplFilterBase');
+export const NGPL_FILTER_BASE = new InjectionToken<NgplFilterBase>('NgplFilterBase');
+
