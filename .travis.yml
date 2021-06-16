@@ -8,16 +8,13 @@ cache:
         - ~/.cache
     override:
         - npm ci
+branches:
+  only:
+    - main
 before_script:
     - npm install -g @angular/cli
 script:
     - npm install
     - npm run compodoc
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  keep_history: true
-  local_dir: "./docs"
-  on:
-    branch: main
+after_success:
+  - bash ./scripts/deploy.sh
