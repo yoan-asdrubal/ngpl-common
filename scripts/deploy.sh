@@ -21,9 +21,6 @@ git clone --quiet --branch=gh-pages https://${GITHUB_TOKEN}@github.com/${GITHUB_
 cd gh-pages
 cp -Rf $HOME/docs/* .
 
-echo "Allow files with underscore https://help.github.com/articles/files-that-start-with-an-underscore-are-missing/" > .nojekyll
-echo "[View live](https://${GITHUB_USER}.github.io/${GITHUB_REPO}/)" > README.md
-
 #add, commit and push files
 git add -f .
 git commit -m "Travis build $TRAVIS_BUILD_NUMBER"
