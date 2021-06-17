@@ -1,10 +1,10 @@
 
-export * from './ngpl-filter-base';
+export * from './table/ngpl-filter-base';
 
-export * from './ngpl-datatable-base';
+export * from './table/ngpl-datatable-base';
 
-export * from './ngpl-filter-menu-base';
+export * from './table/ngpl-filter-menu-base';
 
-export * from './ngpl-filter-applied-base';
+export * from './table/ngpl-filter-applied-base';
 
 export * from './selection';
