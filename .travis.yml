@@ -13,8 +13,24 @@ branches:
     - main
 before_script:
     - npm install -g @angular/cli
-script:
-    - npm install
-    - npm run compodoc
-after_success:
-  - bash ./scripts/deploy.sh
+install:
+  - npm install
+
+jobs:
+  include:
+    - stage: Build and deploy documentation
+      script:
+        - npm run compodoc
+      after_success:
+        - bash ./scripts/deploy.sh
+
+    - stage: npm release
+      script: npm run build:lib
+        deploy:
+          provider: npm
+          email: '$NPM_EMAIL'
+          api_key: '$NPM_TOKEN'
+          skip_cleanup: true
+          on:
+            tags: true
+

@@ -65,5 +65,8 @@
         "stringifyContentPathRegex": "\\.html$"
       }
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
