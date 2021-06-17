@@ -8,9 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:lib": " cd projects/ngpl && npm version patch &&  ng build ngpl --prod ",
-    "build:lib:minor": " cd projects/ngpl && npm version minor && ng build ngpl --prod ",
-    "build:lib:major": " cd projects/ngpl && npm version major && ng build ngpl --prod ",
+    "build:lib": " cd projects/ngpl && npm version patch &&   cd../.. && ng build ngpl --prod && npm run publish",
+    "build:lib:minor": " cd projects/ngpl && npm version minor && cd../.. && ng build ngpl --prod && npm run publish",
+    "build:lib:major": " cd projects/ngpl && npm version major && cd../.. && ng build ngpl --prod && npm run publish",
+    "publish": "cd dist/ngpl && npm publish",
     "test:lib": "jest ",
     "test:lib:coverage": "jest  --coverage  ",
     "compodoc": "npx compodoc -p tsconfig.doc.json   -d ./docs"
