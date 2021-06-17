@@ -2,10 +2,10 @@ import {Directive, Inject, Input, OnDestroy, OnInit, Optional, Self} from '@angu
 import {debounceTime, distinctUntilChanged, startWith, takeUntil, tap} from 'rxjs/operators';
 import {Observable, ReplaySubject, Subject} from 'rxjs';
 import {NgControl} from '@angular/forms';
-import {NGPL_FILTER_BASE, NgplFilterBase} from '../ngpl-base/ngpl-filter-base';
-import {NgplDatatableBase} from '../ngpl-base/ngpl-datatable-base';
-import {NgplFilterAppliedBase} from '../ngpl-base/ngpl-filter-applied-base';
-import {NGPL_FILTER_MENU_BASE, NgplFilterMenuBase} from '../ngpl-base/ngpl-filter-menu-base';
+import {NGPL_FILTER_BASE, NgplFilterBase} from '../ngpl-base/table/ngpl-filter-base';
+import {NgplDatatableBase} from '../ngpl-base/table/ngpl-datatable-base';
+import {NgplFilterAppliedBase} from '../ngpl-base/table/ngpl-filter-applied-base';
+import {NGPL_FILTER_MENU_BASE, NgplFilterMenuBase} from '../ngpl-base/table/ngpl-filter-menu-base';
 
 export enum FilterConfigType {
   PERIOD = 'PERIODO',
@@ -37,7 +37,7 @@ export const filterComparatorsOptions = [
   }, {
     descripcion: 'Entre',
     value: '<>'
-  },
+  }
 ];
 
 export interface NgplFilterConfigValue {
@@ -54,7 +54,7 @@ export interface NgplFilterConfigValue {
   keys: any;
 
   /** Texto que se mostrara en el componente con los valores que se estan utilizando en el filtro */
-  titulo?: string;
+  title?: string;
 
   /** Valor por el que se debe filtrar */
   value?: any;
@@ -119,7 +119,7 @@ export interface NgplFilterConfigValue {
   selector: '[ngplFilterConfig]'
 })
 export class NgplFilterConfigDirective implements OnInit, OnDestroy {
-  @Input() dfFilterConfig: NgplFilterConfigValue;
+  @Input() ngplFilterConfig: NgplFilterConfigValue;
   filter = new ReplaySubject<NgplFilterConfigValue>(1);
 
   destroyIt = new Subject();
@@ -127,24 +127,28 @@ export class NgplFilterConfigDirective implements OnInit, OnDestroy {
 
   constructor(@Optional() @Self() private controlDir: NgControl,
               @Optional() @Inject(NGPL_FILTER_BASE) private ngplFilterBase: NgplFilterBase,
-              @Optional() @Inject(NGPL_FILTER_MENU_BASE)private ngplFilterMenu: NgplFilterMenuBase) {
+              @Optional() @Inject(NGPL_FILTER_MENU_BASE) private ngplFilterMenu: NgplFilterMenuBase) {
 
   }
 
   ngOnInit(): void {
     // console.log('appFilterConfig', this.appFilterConfig);
     // console.log('this.widgetFilterMenu', this.widgetFilterMenu);
-    const keys = this.dfFilterConfig.keys;
-    if (!keys && !this.dfFilterConfig.skipFilter) {
-      throw new Error(this.dfFilterConfig.name + ' debe tener especificado los campos donde aplicara el filtro');
+    const keys = this.ngplFilterConfig.keys;
+    if (!keys && !this.ngplFilterConfig.skipFilter) {
+      throw new Error(this.ngplFilterConfig.name + ' debe tener especificado los campos donde aplicara el filtro');
     }
-    const name = this.dfFilterConfig.name;
+    const name = this.ngplFilterConfig.name;
     if (!name) {
       throw new Error('Debe especificar el nombre del filtro para que sea identificado');
     }
     /**
      * Chequea DI para obtener observable a partir del widgetFilterBase o del formControl asociado a la directiva
      */
+
+    if (!this.ngplFilterConfig.ngplFilterMenu) {
+      this.ngplFilterConfig.ngplFilterMenu = this.ngplFilterMenu;
+    }
 
     let event: Observable<any> = null;
     if (!!this.controlDir) {
@@ -154,48 +158,48 @@ export class NgplFilterConfigDirective implements OnInit, OnDestroy {
     }
 
     if (!!event) {
-      if (!!this.dfFilterConfig.container) {
-        this.dfFilterConfig.container.registerFilter(this);
+      if (!!this.ngplFilterConfig.container) {
+        this.ngplFilterConfig.container.registerFilter(this);
       }
-      if (!!this.dfFilterConfig.filterApplied) {
-        this.dfFilterConfig.filterApplied.registerFilter(this);
+      if (!!this.ngplFilterConfig.filterApplied) {
+        this.ngplFilterConfig.filterApplied.registerFilter(this);
       }
       // console.log('', this.filterConfig, this.controlDir.control.value);
 
       event
         .pipe(
           takeUntil(this.destroyIt$),
-          startWith((!!this.controlDir && this.controlDir.control.value) || this.dfFilterConfig.value),
+          startWith((!!this.controlDir && this.controlDir.control.value) || this.ngplFilterConfig.value),
           distinctUntilChanged(),
           debounceTime(300),
           tap(value => {
-            this.dfFilterConfig = {
-              ...this.dfFilterConfig, ...{
+            this.ngplFilterConfig = {
+              ...this.ngplFilterConfig, ...{
                 value,
                 parent: this,
-                ngplFilterMenu: this.ngplFilterMenu,
+                ngplFilterMenu: this.ngplFilterMenu || this.ngplFilterConfig.ngplFilterMenu,
                 keys: typeof keys === 'string' ? keys.split(',') : keys
               }
             };
-            this.filter.next(this.dfFilterConfig);
+            this.filter.next(this.ngplFilterConfig);
           })
         )
         .subscribe();
     } else {
-      this.dfFilterConfig = {
-        ...this.dfFilterConfig, ...{
+      this.ngplFilterConfig = {
+        ...this.ngplFilterConfig, ...{
           keys: typeof keys === 'string' ? keys.split(',') : keys
         },
         parent: this,
-        ngplFilterMenu: this.ngplFilterMenu
+        ngplFilterMenu: this.ngplFilterMenu || this.ngplFilterConfig.ngplFilterMenu
       };
-      this.filter.next(this.dfFilterConfig);
+      this.filter.next(this.ngplFilterConfig);
     }
 
   }
 
   ngOnDestroy(): void {
-    this.destroyIt.next(this.dfFilterConfig);
+    this.destroyIt.next(this.ngplFilterConfig);
   }
 
   clearFilter(): void {
