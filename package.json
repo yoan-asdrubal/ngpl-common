@@ -8,7 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:lib": "ng build ngpl --prod",
+    "build:lib": " cd projects/ngpl && npm version patch &&  ng build ngpl --prod ",
+    "build:lib:minor": " cd projects/ngpl && npm version minor && ng build ngpl --prod ",
+    "build:lib:major": " cd projects/ngpl && npm version major && ng build ngpl --prod ",
     "test:lib": "jest ",
     "test:lib:coverage": "jest  --coverage  ",
     "compodoc": "npx compodoc -p tsconfig.doc.json   -d ./docs"
@@ -46,6 +48,7 @@
     "karma-coverage": "~2.0.3",
     "ng-packagr": "^11.0.0",
     "protractor": "~7.0.0",
+    "replace-in-file": "^6.2.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
