@@ -1,9 +1,7 @@
 {
   "name": "ngpl-common",
-  "version": "2.0.6",
-  "peerDependencies": {
-  },
-
+  "version": "2.0.11",
+  "peerDependencies": {},
   "dependencies": {
     "tslib": "^2.0.0"
   }
