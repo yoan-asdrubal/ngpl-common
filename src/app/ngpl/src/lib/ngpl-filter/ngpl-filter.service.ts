@@ -153,7 +153,7 @@ export class NgplFilterService {
         // console.log('fullValue', fullValue,typeof fullValue);
 
         if (typeof fullValue === 'number' || typeof fullValue === 'boolean' || !!fullValue) {
-          const filterPice = filter.value.toString().toLowerCase().split('*');
+          const filterPice = filter.value.toString().toLowerCase().split('+');
           if (!!filter.exact) {
             return filterPice.filter(f => fullValue === f).length === filterPice.length;
           }
