@@ -1,5 +1,5 @@
 import {Directive, Inject, Input, OnDestroy, OnInit, Optional, Self} from '@angular/core';
-import {debounceTime, distinctUntilChanged, startWith, takeUntil, tap} from 'rxjs/operators';
+import {debounceTime, distinctUntilChanged, map, startWith, takeUntil, tap} from 'rxjs/operators';
 import {Observable, ReplaySubject, Subject} from 'rxjs';
 import {NgControl} from '@angular/forms';
 import {NGPL_FILTER_BASE, NgplFilterBase} from '../ngpl-base/injection-tokens/ngpl-filter-base';
@@ -174,6 +174,7 @@ export class NgplFilterConfigDirective implements OnInit, OnDestroy {
         .pipe(
           takeUntil(this.destroyIt$),
           startWith((!!this.controlDir && this.controlDir.control.value) || this.ngplFilterConfig.value),
+          map(value => typeof value === 'string' ? value.trim() : value),
           distinctUntilChanged(),
           debounceTime(300),
           tap(value => {
