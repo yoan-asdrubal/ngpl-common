@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {FilterConfigType, NgplFilterConfigValue} from './ngpl-filter-config.directive';
 
 @Injectable({

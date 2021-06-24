@@ -2,10 +2,10 @@ import {Directive, Inject, Input, OnDestroy, OnInit, Optional, Self} from '@angu
 import {debounceTime, distinctUntilChanged, startWith, takeUntil, tap} from 'rxjs/operators';
 import {Observable, ReplaySubject, Subject} from 'rxjs';
 import {NgControl} from '@angular/forms';
-import {NGPL_FILTER_BASE, NgplFilterBase} from '../ngpl-base/table/ngpl-filter-base';
-import {NgplDatatableBase} from '../ngpl-base/table/ngpl-datatable-base';
-import {NgplFilterAppliedBase} from '../ngpl-base/table/ngpl-filter-applied-base';
-import {NGPL_FILTER_MENU_BASE, NgplFilterMenuBase} from '../ngpl-base/table/ngpl-filter-menu-base';
+import {NGPL_FILTER_BASE, NgplFilterBase} from '../ngpl-base/injection-tokens/ngpl-filter-base';
+import {NgplDatatableBase} from '../ngpl-base/injection-tokens/ngpl-datatable-base';
+import {NGPL_FILTER_APPLIED_BASE, NgplFilterAppliedBase} from '../ngpl-base/injection-tokens/ngpl-filter-applied-base';
+import {NGPL_FILTER_MENU_BASE, NgplFilterMenuBase} from '../ngpl-base/injection-tokens/ngpl-filter-menu-base';
 
 export enum FilterConfigType {
   PERIOD = 'PERIODO',
@@ -127,7 +127,8 @@ export class NgplFilterConfigDirective implements OnInit, OnDestroy {
 
   constructor(@Optional() @Self() private controlDir: NgControl,
               @Optional() @Inject(NGPL_FILTER_BASE) private ngplFilterBase: NgplFilterBase,
-              @Optional() @Inject(NGPL_FILTER_MENU_BASE) private ngplFilterMenu: NgplFilterMenuBase) {
+              @Optional() @Inject(NGPL_FILTER_MENU_BASE) private ngplFilterMenu: NgplFilterMenuBase,
+              @Optional() @Inject(NGPL_FILTER_APPLIED_BASE) private ngplFilterApplied: NgplFilterAppliedBase) {
 
   }
 
@@ -148,6 +149,9 @@ export class NgplFilterConfigDirective implements OnInit, OnDestroy {
 
     if (!this.ngplFilterConfig.ngplFilterMenu) {
       this.ngplFilterConfig.ngplFilterMenu = this.ngplFilterMenu;
+    }
+    if (!this.ngplFilterConfig.filterApplied) {
+      this.ngplFilterConfig.filterApplied = this.ngplFilterApplied;
     }
 
     let event: Observable<any> = null;

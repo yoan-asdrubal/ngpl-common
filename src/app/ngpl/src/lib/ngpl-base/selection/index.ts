@@ -1,3 +1,1 @@
-export * from './ngpl-customSelectionModel';
-
-export * from './ngpl-customSelectionModelImpl';
+export * from './ngpl-selection';
