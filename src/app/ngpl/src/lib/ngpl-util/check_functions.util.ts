@@ -1,51 +1,51 @@
-export function isNull(value: boolean): boolean {
+export function isNull(value: any): boolean {
   return value === null;
 }
 
-export function isNotNull(value: boolean): boolean {
+export function isNotNull(value: any): boolean {
   return value !== null;
 }
 
-export function isNullOrUndefined(value: boolean): boolean {
+export function isNullOrUndefined(value: any): boolean {
   return value === null || value === undefined;
 }
 
-export function isNotNullOrUndefined(value: boolean): boolean {
+export function isNotNullOrUndefined(value: any): boolean {
   return value !== null && value !== undefined;
 }
 
-export function isArray(value: boolean): boolean {
+export function isArray(value: any): boolean {
   return Array.isArray(value);
 }
 
-export function isBoolean(value: boolean): boolean {
+export function isBoolean(value: any): boolean {
   return typeof value === 'boolean';
 }
 
-export function isFunction(value: boolean): boolean {
+export function isFunction(value: any): boolean {
   return typeof value === 'function';
 }
 
-export function isNumber(value: boolean): boolean {
+export function isNumber(value: any): boolean {
   return typeof value === 'number';
 }
 
-export function isObject(value: boolean): boolean {
+export function isObject(value: any): boolean {
   return value !== null && typeof value === 'object';
 }
 
-export function isPrimitive(value: boolean): boolean {
+export function isPrimitive(value: any): boolean {
   return (typeof value !== 'object' && typeof value !== 'function') || value === null;
 }
 
-export function isString(value: boolean): boolean {
+export function isString(value: any): boolean {
   return typeof value === 'string';
 }
 
-export function isUndefined(value: boolean): boolean {
+export function isUndefined(value: any): boolean {
   return value === undefined;
 }
 
-export function isNotUndefined(value: boolean): boolean {
+export function isNotUndefined(value: any): boolean {
   return value !== undefined;
 }

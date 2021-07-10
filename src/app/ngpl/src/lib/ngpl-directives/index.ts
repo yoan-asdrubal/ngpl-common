@@ -7,4 +7,7 @@ export * from './ngpl-styles/ngpl-width.directive';
 export * from './ngpl-styles/ngpl-min-width.directive';
 export * from './ngpl-disable-reactive-control/ngpl-disable-reactive-control.directive';
 export * from './ngpl-prevent-keyboard/ngpl-prevent-keyboard.directive';
+export * from './ngpl-numbers';
+export * from './ngpl-copy-with-message/ngpl-copy-with-message.directive';
+export * from './ngpl-copy-with-message/ngpl-copy-success/ngpl-copy-success.component';
 export * from './ngpl-common-directives.module';

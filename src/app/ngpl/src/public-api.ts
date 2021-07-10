@@ -14,8 +14,6 @@ export * from './lib/ngpl-directives';
 
 export * from './lib/ngpl-pipes';
 
-export * from './lib/ngpl-filter';
-
 export * from './lib/ngpl-common.module';
 
 

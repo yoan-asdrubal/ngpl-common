@@ -17,7 +17,7 @@ declare global {
 }
 if (!Object.getOrDefault) {
   Object.defineProperty(Object.prototype, 'getOrDefault', {
-    value(field, defaultValue = ''): any {
+    value(field , defaultValue = ''): any {
       if (!this) {
         return defaultValue;
       }
