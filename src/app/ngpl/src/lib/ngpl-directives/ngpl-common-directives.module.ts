@@ -14,6 +14,8 @@ import {NgplPreventKeyboardDirective} from './ngpl-prevent-keyboard/ngpl-prevent
 import {NgplNumberFormatDirective} from './ngpl-numbers/ngpl-number-format.directive';
 import {NgplDecimalNumberDirective} from './ngpl-numbers/ngpl-decimal-number.directive';
 import {NgplIntegerNumberDirective} from './ngpl-numbers/ngpl-integer-number.directive';
+import {NgplCopyWithMessageDirective} from './ngpl-copy-with-message/ngpl-copy-with-message.directive';
+import {NgplCopySuccessComponent} from './ngpl-copy-with-message/ngpl-copy-success/ngpl-copy-success.component';
 
 const directives = [
   NgplDisableReactiveControlDirective,
@@ -25,7 +27,9 @@ const directives = [
   NgplPreventKeyboardDirective,
   NgplNumberFormatDirective,
   NgplDecimalNumberDirective,
-  NgplIntegerNumberDirective
+  NgplIntegerNumberDirective,
+  NgplCopyWithMessageDirective,
+  NgplCopySuccessComponent
 ];
 
 @NgModule({
