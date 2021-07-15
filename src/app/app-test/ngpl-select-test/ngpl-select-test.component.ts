@@ -1,41 +1,50 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {Component, ContentChild, OnInit} from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {NgplSelection} from '../../ngpl/src/lib/ngpl-base';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
 
 @Component({
-  selector: 'ngpl-ngpl-select-test',
+  selector: 'ngpl-selection-test',
   templateUrl: './ngpl-select-test.component.html',
   styleUrls: ['./ngpl-select-test.component.scss']
 })
 export class NgplSelectTestComponent implements OnInit {
 
-  index = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  displayColumns = ['select', 'rut', 'nombre', 'movimiento', 'valor', 'accion'];
+  selection = new NgplSelection();
+  items = [];
+  searching = false;
+  @ContentChild(MatPaginator, {static: true}) matPaginator: MatPaginator;
+  @ContentChild(MatSort, {static: true}) matSort: MatSort;
 
-  items: any[] = [];
-
-  formGroup: FormGroup;
-  disableControl = new FormControl();
-  readOnlyControl = new FormControl();
-
-
-  constructor(private _formB: FormBuilder) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.formGroup = this._formB.group({
-      field1: [],
-    });
-    this.items = this.index.map((i) => {
+    this.initData();
+  }
+
+  initData(): void {
+    this.items = Array(30).fill(1).map((i, index) => {
+
       return {
-        id: i,
-        descripcion: `Value Long Descripcion to item  ${i}`
+        id: index,
+        rut: String.getRandomWord(10),
+        movimiento: String.getRandomWord(10),
+        valor: String.getRandomWord(10),
+        nombre: String.getRandomSentence(3)
       };
     });
-
-    // this.formGroup.statusChanges
-    //   .pipe(
-    //     untilDestroyed(this),
-    //     tap(val => console.log('statusChanges', val, this.formGroup.value))
-    //   )
-    //   .subscribe();
   }
+
+  eliminar(item): void {
+    this.items = this.items.filter(i => i.rut !== item.rut);
+  }
+
+  eliminarAll(): void {
+    this.items = [];
+  }
+
 }

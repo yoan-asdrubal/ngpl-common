@@ -5,6 +5,7 @@ import {NgplCommonPipesModule} from './ngpl-pipes';
 import {NgplCommonDirectivesModule} from './ngpl-directives';
 import './ngpl-interfaces/string.interface';
 import './ngpl-interfaces/object.interface';
+import {FormsModule} from '@angular/forms';
 // @ts-ignore
 
 const modules = [
@@ -18,6 +19,7 @@ const modules = [
   declarations: [],
   imports: [
     CommonModule,
+    FormsModule,
     modules
   ],
   exports: [modules]
