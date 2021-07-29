@@ -1,0 +1,10 @@
+.common-layout-container {
+  flex-direction: column !important;
+
+  .common-layout-title-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem !important;
+    align-items: baseline;
+  }
+}

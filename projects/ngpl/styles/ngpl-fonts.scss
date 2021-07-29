@@ -1,11 +1,13 @@
 
-.pointer {
-  cursor: pointer !important;
+.c-pointer, .pointer {
+  cursor: pointer;
 }
+
 .disabled {
   color: #cccccc;
+
   &:not(.pointer) {
-    cursor: default!important;
+    cursor: default !important;
   }
 }
 

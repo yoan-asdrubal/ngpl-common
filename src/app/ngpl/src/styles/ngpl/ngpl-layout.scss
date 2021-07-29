@@ -7,6 +7,10 @@
   min-width: 75px;
 }
 
+.mw-75{
+  min-width: 75px;
+}
+
 .mw-80{
   min-width: 80px;
 }
@@ -17,6 +21,29 @@
 
 .mw-160{
   min-width: 160px;
+}
+
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.o-hidden {
+  overflow: hidden !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.h-300p {
+  height: 300px;
+}
+
+.h-400p {
+  height: 400px;
 }
 
 .text-center {
@@ -68,10 +95,6 @@
 
   &.place-content-flex-end {
     place-content: flex-end;
-  }
-
-  &.place-content-space-around{
-    place-content: center space-around;
   }
 
 }
