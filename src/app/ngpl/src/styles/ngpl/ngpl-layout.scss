@@ -7,10 +7,6 @@
   min-width: 75px;
 }
 
-.mw-75{
-  min-width: 75px;
-}
-
 .mw-80{
   min-width: 80px;
 }
@@ -95,6 +91,10 @@
 
   &.place-content-flex-end {
     place-content: flex-end;
+  }
+
+  &.place-content-space-around{
+    place-content: center space-around;
   }
 
 }
