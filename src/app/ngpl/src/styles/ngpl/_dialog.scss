@@ -1,0 +1,91 @@
+@import "variables";
+
+#common-layout-dialog {
+  height: fit-content;
+  background-color: $c-white;
+  padding: 0 !important;
+
+  label.title {
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  //::ng-deep {
+  .mat-card-header, mat-card-header {
+    height: 60px;
+    border-bottom: 1px solid #d8d8d8;
+    display: flex;
+    align-items: center;
+
+    .mat-card-header-text, mat-card-header-text {
+      margin-left: 16px !important;
+      width: 100%;
+
+      .mat-card-title, mat-card-title {
+        margin-bottom: 0;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333333;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+    }
+
+    &.sm {
+      height: 40px !important;
+      margin-bottom: 5px !important;
+    }
+  }
+
+  .mat-card-content, mat-card-content {
+    overflow: auto;
+  }
+
+  .mat-card-actions, mat-card-actions {
+    margin: 16px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &.end {
+      justify-content: flex-end;
+    }
+
+    &.start {
+      justify-content: flex-start;
+    }
+
+    &.center {
+      justify-content: center;
+    }
+  }
+
+
+  #common-layout-dialog-title {
+    height: 60px;
+    border-bottom: 1px solid #d8d8d8;
+    display: flex;
+    align-items: center;
+    padding-left: 16px !important;
+    justify-content: space-between;
+
+    &.sm {
+      height: 40px !important;
+      margin-bottom: 5px !important;
+    }
+  }
+
+  #common-layout-dialog-content {
+    margin: 16px 24px !important;
+    flex: 1 1;
+  }
+
+}
+
+.cdk-overlay-pane {
+  max-width: 100vw !important;
+}

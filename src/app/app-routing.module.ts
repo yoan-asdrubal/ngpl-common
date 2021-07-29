@@ -14,6 +14,9 @@ const routes: Routes = [
   }, {
     path: 'ngpl-directives',
     component: NgplDirectivesTestComponent
+  }, {
+    path: 'ngpl-selection',
+    component: NgplSelectTestComponent
   }
 ];
 

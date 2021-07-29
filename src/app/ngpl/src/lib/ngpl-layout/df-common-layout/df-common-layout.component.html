@@ -1,0 +1,23 @@
+<div [style.justify-content]="align" class="page-container" fxLayout class="common-layout-container">
+
+  <div class="page-title" class="common-layout-title-text">
+    <div>
+      <ng-content select="[common-layout-title]">
+      </ng-content>
+    </div>
+    <div class="grow">
+      <ng-content select="[common-layout-filter-values]">
+      </ng-content>
+    </div>
+    <div>
+      <ng-content select="[common-layout-title-options]">
+      </ng-content>
+    </div>
+
+  </div>
+
+  <div class="page-content">
+    <ng-content select="[common-layout-content]">
+    </ng-content>
+  </div>
+</div>

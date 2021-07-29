@@ -197,26 +197,3 @@ span.mat-option-text {
   overflow: hidden !important;
 }
 
-p, h1, h2, h3, span, input, label, mat-checkbox,
-.mat-option, .mat-list-option, .mat-paginator,
-.mat-stepper-horizontal, .mat-slide-toggle-content {
-  font-family: "Source Sans Pro", sans-serif !important;
-}
-
-#subs div.mat-form-field-wrapper {
-  margin: 0px !important;
-  padding: 0px !important;
-}
-
-.disabled {
-  opacity: 0.5;
-}
-
-.full-width {
-  width: 100% !important;
-  flex: 1 1 ;
-}
-
-.pointer {
-  cursor: pointer;
-}

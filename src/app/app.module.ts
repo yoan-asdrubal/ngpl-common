@@ -29,6 +29,7 @@ import {NgplSelectTestComponent} from './app-test/ngpl-select-test/ngpl-select-t
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgplCommonModule} from './ngpl/src/lib/ngpl-common.module';
 import {NgplDirectivesTestComponent} from './app-test/ngpl-directives-test/ngpl-directives-test.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 registerLocaleData(localeEs);
 
@@ -49,7 +50,9 @@ const materialModules = [
   MatPaginatorModule,
   MatSortModule,
   MatTooltipModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatMenuModule
+
 ];
 
 const ngplCommonModules = [
