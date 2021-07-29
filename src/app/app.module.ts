@@ -25,7 +25,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {SkeletonTestComponent} from './app-test/skeleton-test/skeleton-test.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {NgplSelectTestComponent} from './app-test/ngpl-select-test/ngpl-select-test.component';
+import {NgplSelectionTestComponent} from './app-test/ngpl-select-test/ngpl-selection-test.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgplCommonModule} from './ngpl/src/lib/ngpl-common.module';
 import {NgplDirectivesTestComponent} from './app-test/ngpl-directives-test/ngpl-directives-test.component';
@@ -64,7 +64,7 @@ const ngplCommonModules = [
   declarations: [
     AppComponent,
     SkeletonTestComponent,
-    NgplSelectTestComponent,
+    NgplSelectionTestComponent,
     NgplDirectivesTestComponent,
     SideNavComponent
   ],
