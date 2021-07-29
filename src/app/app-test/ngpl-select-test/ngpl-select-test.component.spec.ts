@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgplSelectTestComponent } from './ngpl-select-test.component';
+import { NgplSelectionTestComponent } from './ngpl-selection-test.component';
 
 describe('NgplSelectTestComponent', () => {
-  let component: NgplSelectTestComponent;
-  let fixture: ComponentFixture<NgplSelectTestComponent>;
+  let component: NgplSelectionTestComponent;
+  let fixture: ComponentFixture<NgplSelectionTestComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgplSelectTestComponent ]
+      declarations: [ NgplSelectionTestComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgplSelectTestComponent);
+    fixture = TestBed.createComponent(NgplSelectionTestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
