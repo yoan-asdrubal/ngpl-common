@@ -9,6 +9,7 @@ import {NgplFillPipe} from './ngpl-fill.pipe';
 import {NgplHighlightPipe} from './highlight/ngpl-highlight.pipe';
 import '../ngpl-interfaces/string.interface';
 import '../ngpl-interfaces/object.interface';
+import {NgplTruncateNumberPipe} from './ngpl-truncate-number.pipe';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import '../ngpl-interfaces/object.interface';
     NgplGeneratePagesPipe,
     TruncatePipe,
     NgplFillPipe,
-    NgplHighlightPipe
+    NgplHighlightPipe,
+    NgplTruncateNumberPipe
   ],
   exports: [
     NgplSafePipe,
@@ -30,7 +32,8 @@ import '../ngpl-interfaces/object.interface';
     NgplGeneratePagesPipe,
     TruncatePipe,
     NgplHighlightPipe,
-    NgplFillPipe
+    NgplFillPipe,
+    NgplTruncateNumberPipe
   ]
 })
 export class NgplCommonPipesModule {
