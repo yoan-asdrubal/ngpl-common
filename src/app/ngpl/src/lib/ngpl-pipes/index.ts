@@ -5,4 +5,5 @@ export * from './ngpl-generate-pages.pipe';
 export * from './ngpl-safe.pipe';
 export * from './ngpl-safeHtml.pipe';
 export * from './ngpl-slice-items.pipe';
+export * from './ngpl-truncate-number.pipe';
 export * from './ngpl-common-pipes.module';
